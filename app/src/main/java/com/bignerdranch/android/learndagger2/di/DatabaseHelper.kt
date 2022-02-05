@@ -1,5 +1,3 @@
 package com.bignerdranch.android.learndagger2.di
 
-class DatabaseHelper {
-
-}
+class DatabaseHelper(private val repository: Repository)
