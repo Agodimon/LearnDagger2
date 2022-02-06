@@ -1,11 +1,9 @@
-package com.bignerdranch.android.learndagger2
+package com.bignerdranch.android.learndagger2.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.bignerdranch.android.learndagger2.di.DatabaseHelper
-import com.bignerdranch.android.learndagger2.di.NetworkModule
-import com.bignerdranch.android.learndagger2.di.NetworkUtils
-import javax.inject.Inject
+import com.bignerdranch.android.learndagger2.di.app.App
+import com.bignerdranch.android.learndagger2.R
 
 class MainActivity : AppCompatActivity() {
 

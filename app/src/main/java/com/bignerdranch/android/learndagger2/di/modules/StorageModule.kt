@@ -1,5 +1,7 @@
-package com.bignerdranch.android.learndagger2.di
+package com.bignerdranch.android.learndagger2.di.modules
 
+import com.bignerdranch.android.learndagger2.model.DatabaseHelper
+import com.bignerdranch.android.learndagger2.model.Repository
 import dagger.Module
 import dagger.Provides
 

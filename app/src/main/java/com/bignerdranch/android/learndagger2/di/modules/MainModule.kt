@@ -1,6 +1,8 @@
-package com.bignerdranch.android.learndagger2.di
+package com.bignerdranch.android.learndagger2.di.modules
 
-import com.bignerdranch.android.learndagger2.MainActivityPresenter
+import com.bignerdranch.android.learndagger2.model.DatabaseHelper
+import com.bignerdranch.android.learndagger2.model.NetworkUtils
+import com.bignerdranch.android.learndagger2.ui.MainActivityPresenter
 import dagger.Module
 import dagger.Provides
 
