@@ -9,6 +9,7 @@ import com.bignerdranch.android.learndagger2.di.app.App
 import com.bignerdranch.android.learndagger2.R
 import com.bignerdranch.android.learndagger2.model.ConnectionManager
 import com.bignerdranch.android.learndagger2.model.NetworkUtils
+import com.bignerdranch.android.learndagger2.model.event.EventHandler
 import com.bignerdranch.android.learndagger2.model.server.ServerApi
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +17,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var networkUtilsLazy: dagger.Lazy<NetworkUtils>
     lateinit var serverApiOne: ServerApi
     lateinit var serverApiTwo: ServerApi
+
+    lateinit var eventHandler: Set<EventHandler>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         serverApiOne = (application as App).appComponent.getServerApiDev()
         serverApiTwo = (application as App).appComponent.getServerApiProd1()
+        eventHandler = (application as App).appComponent.getEventHandlers()
 
 
 

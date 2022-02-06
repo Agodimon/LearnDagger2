@@ -1,12 +1,10 @@
 package com.bignerdranch.android.learndagger2.di.app
 
-import com.bignerdranch.android.learndagger2.di.modules.MainModule
-import com.bignerdranch.android.learndagger2.di.modules.NetworkModule
-import com.bignerdranch.android.learndagger2.di.modules.ServerApiModule
-import com.bignerdranch.android.learndagger2.di.modules.StorageModule
+import com.bignerdranch.android.learndagger2.di.modules.*
 import com.bignerdranch.android.learndagger2.extensions.Dev
 import com.bignerdranch.android.learndagger2.extensions.Prod
 import com.bignerdranch.android.learndagger2.model.NetworkUtils
+import com.bignerdranch.android.learndagger2.model.event.EventHandler
 import com.bignerdranch.android.learndagger2.model.server.ServerApi
 import com.bignerdranch.android.learndagger2.ui.MainActivityPresenter
 import dagger.Component
@@ -19,7 +17,8 @@ import javax.inject.Named
         StorageModule::class,
         NetworkModule::class,
         MainModule::class,
-        ServerApiModule::class
+        ServerApiModule::class,
+        IntoSetModule::class
     ]
 )
 interface AppComponent {
@@ -34,5 +33,7 @@ interface AppComponent {
 
     @Dev
     fun getServerApiDev(): ServerApi
+
+    fun getEventHandlers():Set<EventHandler>
 
 }
