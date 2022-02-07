@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         serverApiOne = (application as App).appComponent.getServerApiDev()
         serverApiTwo = (application as App).appComponent.getServerApiProd1()
-        eventHandler = (application as App).appComponent.getEventHandlers()
+
 
 
 

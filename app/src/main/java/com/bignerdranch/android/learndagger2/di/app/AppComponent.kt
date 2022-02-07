@@ -2,6 +2,7 @@ package com.bignerdranch.android.learndagger2.di.app
 
 import com.bignerdranch.android.learndagger2.di.modules.*
 import com.bignerdranch.android.learndagger2.extensions.Dev
+import com.bignerdranch.android.learndagger2.extensions.EventHandlerType
 import com.bignerdranch.android.learndagger2.extensions.Prod
 import com.bignerdranch.android.learndagger2.model.DatabaseHelper
 import com.bignerdranch.android.learndagger2.model.NetworkUtils
@@ -35,8 +36,8 @@ interface AppComponent {
     @Dev
     fun getServerApiDev(): ServerApi
 
-    fun getEventHandlers():Set<EventHandler>
 
 
+    fun getEventHandlers(): Map<EventHandlerType, EventHandler>
 
 }
