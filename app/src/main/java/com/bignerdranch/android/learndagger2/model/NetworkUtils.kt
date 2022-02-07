@@ -1,5 +1,7 @@
 package com.bignerdranch.android.learndagger2.model
 
-class NetworkUtils(private val connectionManager: ConnectionManager)
+import javax.inject.Inject
+
+class NetworkUtils @Inject constructor(private val connectionManager: ConnectionManager)
 
 

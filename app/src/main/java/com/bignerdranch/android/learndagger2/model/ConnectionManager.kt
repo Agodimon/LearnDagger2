@@ -1,4 +1,6 @@
 package com.bignerdranch.android.learndagger2.model
 
-class ConnectionManager {
+import javax.inject.Inject
+
+class ConnectionManager @Inject constructor(){
 }

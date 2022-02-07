@@ -11,29 +11,21 @@ import com.bignerdranch.android.learndagger2.model.ConnectionManager
 import com.bignerdranch.android.learndagger2.model.NetworkUtils
 import com.bignerdranch.android.learndagger2.model.event.EventHandler
 import com.bignerdranch.android.learndagger2.model.server.ServerApi
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var networkUtilsLazy: dagger.Lazy<NetworkUtils>
-    lateinit var serverApiOne: ServerApi
-    lateinit var serverApiTwo: ServerApi
-
-    lateinit var eventHandler: Set<EventHandler>
+    @Inject
+    lateinit var mainActivityPresenter: MainActivityPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        networkUtilsLazy = (application as App).appComponent.getNetworkUtils()
-        findViewById<Button>(R.id.button_one).setOnClickListener {
-            val networkUtils = networkUtilsLazy.get()
-        }
-
-        serverApiOne = (application as App).appComponent.getServerApiDev()
-        serverApiTwo = (application as App).appComponent.getServerApiProd1()
-
-
-
-
+        (application as App).appComponent.injectMainActivity(this)
+    }
+    @Inject
+    fun postInit(networkUtils: NetworkUtils){
+        //..
     }
 }
